@@ -1,0 +1,32 @@
+#!/bin/sh
+sudo yum install lrzsz
+y
+
+cd /home/chenshaoyue
+rm ./*.gz
+cd /home/work/log/cache/qqvideo/
+for((i=0;i<10;i++))
+do
+	sudo cat access.log-201705130$i.gz > /home/chenshaoyue/na_130$i.gz
+	sudo cat access.log-201705140$i.gz > /home/chenshaoyue/na_140$i.gz
+done 
+for((i=10;i<24;i++))
+do
+	sudo cat access.log-20170513$i.gz > /home/chenshaoyue/na_13$i.gz
+	sudo cat access.log-20170514$i.gz > /home/chenshaoyue/na_14$i.gz
+done 
+cd /home/chenshaoyue
+tar -czf access.tar.gz ./na*.gz
+sz access.tar.gz
+
+
+
+sudo cat error.log-20170513$i.gz > /home/chenshaoyue/ne_13$i.gz
+sudo cat error.log-20170514$i.gz > /home/chenshaoyue/ne_14$i.gz
+
+cd /home/work/log/cache/qqvideo/
+sudo cat access.log-2017051016.gz > /home/chenshaoyue/ca.gz
+sudo cat error.log-2017051016.gz > /home/chenshaoyue/ce.gz
+
+cd /home/chenshaoyue
+sz *.gz

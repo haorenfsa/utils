@@ -1,0 +1,2 @@
+- colomn num shall be changed to names to provide readability
+- 504 analysis is easy, grep errors in CAlog, and check time and name in CElog and can grep a list of reason and error origin ips

@@ -1,0 +1,3 @@
+cd /home/chenshaoyue
+rm ./*.gz
+cd /home/work/log/cache/qqvideo/
